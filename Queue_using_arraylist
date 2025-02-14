@@ -1,0 +1,58 @@
+def Enqueue(data):
+    global front
+    global rear
+    if front==-1 and rear==-1:
+        queue.append(data)
+        front=0;rear=0
+        print(queue[rear], "is Enqueued into Queue")
+    else:
+        rear +=-1
+        queue.append(data)
+        print(queue[rear], "is Enqueue into Queue")
+        
+def Dequeue():
+    global front
+    global rear
+    if front==-1 and rear==-1:
+        print("Queue is empty")
+    elif front==0 and rear==0:
+        print(queue[front],"is Dequeue from Queue")
+        queue.pop(0)
+        front = -1
+        rear = -1
+    else:
+        print(queue[front], "is Dequeue fom Queue")
+        queue.pop(0)
+        
+def Display():
+    if queue:
+        print(queue)
+    else:
+        print("Queue is Empty")
+        
+if __name__ == "__main__":
+    queue = []
+    front = -1;
+    rear = -1;
+    
+    print("\n ***********WELCOME***********")
+    print("Enter 1 to Enqueue an element into Queue")
+    print("Enter 2  to Enqueue an element into Queue")
+    print("Enter 3  to Display all element in Queue")
+    print("Enter -1 to EXIT\n")
+    
+    while(True):
+        ip = int(input("Enter  your Choice:- "))
+        if ip==1:
+            data = int(input("Enter your Enqueue value:- "))
+            Enqueue(data)
+        elif ip==2:
+            Dequeue()
+        elif ip==3:
+            Display()
+        elif ip==-1:
+            print("you have Exited the program")
+            break
+        else:
+            print("Invalid choice ")
+    
